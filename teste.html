@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <br>
+  <br>
+		<input type="text" id="CPF" placeholder="000.000.000-00" />
+		<input type="date" id="dtnascimento" />
+		<input class="btn btn-primary" type="button" onclick="funcaoDesmascara()" value="Confirmar" />
+
+	<!-- Função para colocar mascara em campos -->
+	<script>
+		$(document).ready(function () { 
+			var $seuCampoCpf = $("#CPF");
+			$seuCampoCpf.mask('000.000.000-00', {reverse: true});
+
+		});
+	</script>
+
+	<!--Funcão para desfazer mascara em campos-->
+	
+	<script>
+	function funcaoDesmascara(){
+	var cpff = $("#CPF").val();
+	
+	
+	cpff = cpff.replace(".", "");
+	cpff = cpff.replace(".", "");
+	cpff = cpff.replace("-", "");
+	
+	data = $("#dtnascimento").val().replace(/[^\d]+/g,'');
+
+	alert(data); 
+	alert(cpff); 
+	}
+
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+  </body>
+</html>
